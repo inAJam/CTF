@@ -182,3 +182,26 @@ If we try to run the program, we quickly get an idea of the location of the erro
     print('That is correct! Here\'s your flag: ' + flag)
 IndentationError: unexpected indent
 ```
+Once we fix the indentation, we get the flag.  
+Flag: **picoCTF{1nd3nt1ty_cr1515_09ee727a}**  
+
+
+## fixme2.py
+If we open the file in a python editor, we quickly get an idea of the error. It's using an assignment statemnet when it should have been using a comparision statement.  
+```
+# Check that flag is not empty
+if flag = "": # assignment statement
+  print('String XOR encountered a problem, quitting.')
+else:
+  print('That is correct! Here\'s your flag: ' + flag)
+```
+```
+#Fixed code
+# Check that flag is not empty
+if flag == "":
+  print('String XOR encountered a problem, quitting.')
+else:
+  print('That is correct! Here\'s your flag: ' + flag)
+```
+Once we fix and run it, we get the flag.  
+Flag: **picoCTF{3qu4l1ty_n0t_4551gnm3nt_4863e11b}**
