@@ -62,3 +62,14 @@ Flag: **picoCTF{h45h_sl1ng1ng_fffcda23}**
 ## ASCII Numbers
 We just transfer the string into **cyberchef** and decode it to get the flag.  
 Flag: **picoCTF{45c11_n0_qu35710n5_1ll_t311_y3_n0_l135_445d4180}**  
+
+
+## plumbing
+To solve this challenge, we just ***nc*** into the sever and pipe the output to a text file. After that we run **grep** on the file to find the flag.  
+```
+thermos@valkyrie:~/CTFs$ nc jupiter.challenges.picoctf.org 7480 > a.txt
+
+thermos@valkyrie:~/CTFs$ cat a.txt | grep pico
+picoCTF{digital_plumb3r_06e9d954}
+```
+Flag: **picoCTF{digital_plumb3r_06e9d954}**

@@ -90,3 +90,95 @@ Flag: **picoCTF{tr45h_51ng1ng_489dea9a}**
 Once we unzip it we realise that it's a really big directory with many folders and files. We use **grep** to search for **pico** inside this directory.  
 ![alt text](images/image-10.png)  
 Flag: **picoCTF{gr3p_15_m4g1c_ef8790dc}**
+
+
+## Lets Warm Up
+***0x70 -> p***  
+Flag: **picoCTF{p}**  
+
+
+## convertme.py
+For this challenge, we just need to answer the question returned by the program and we get the flag.  
+```
+If 37 is in decimal base, what is it in binary base?
+Answer: 00100101     
+That is correct! Here's your flag: picoCTF{4ll_y0ur_b4535_722f6b39}
+```
+Flag: **picoCTF{4ll_y0ur_b4535_722f6b39}**  
+
+
+## Nice netcat...
+The program returns us a list of numbers, they don't look like **hex** but they might be **ascii**. Let's try to convert them from **ascii** characters to text.  
+![alt text](images/image-11.png)  
+Flag: **picoCTF{g00d_k1tty!_n1c3_k1tty!_9b3b7392}**  
+
+
+## Magikarp Ground Mission
+Once we ssh and run ls we see two different files, one looks like a part of the flag and the other instructions. We just follow through the instructions to get the flag.  
+```
+ssh ctf-player@venus.picoctf.net -p 52777
+The authenticity of host '[venus.picoctf.net]:52777 ([3.131.124.143]:52777)' can't be established.
+ED25519 key fingerprint is SHA256:P1f6h95BrSVnJbm2AKhphfHHGEyAeThib/rN/AwKs24.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[venus.picoctf.net]:52777' (ED25519) to the list of known hosts.
+ctf-player@venus.picoctf.net's password: 
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1103-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ctf-player@pico-chall$ ls
+1of3.flag.txt  instructions-to-2of3.txt
+ctf-player@pico-chall$ cat 1of3.flag.txt 
+picoCTF{xxsh_
+ctf-player@pico-chall$ cat instructions-to-2of3.txt 
+Next, go to the root of all things, more succinctly `/`
+ctf-player@pico-chall$ cd /
+ctf-player@pico-chall$ ls
+2of3.flag.txt  bin  boot  dev  etc  home  instructions-to-3of3.txt  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+ctf-player@pico-chall$ cat 2of3.flag.txt 
+0ut_0f_\/\/4t3r_
+ctf-player@pico-chall$ cat instructions-to-3of3.txt 
+Lastly, ctf-player, go home... more succinctly `~`
+ctf-player@pico-chall$ cd ~
+ctf-player@pico-chall$ ls
+3of3.flag.txt  drop-in
+ctf-player@pico-chall$ cat 3of3.flag.txt 
+1118a9a4}
+ctf-player@pico-chall$
+```
+Flag: **picoCTF{xxsh_0ut_0f_\/\/4t3r_1118a9a4}**  
+
+## First Find
+We unzip the file and run the **find** command with **-type f** to only look for files and **-name uber-secret.txt** for the filename to look for.  
+Finally we just ***cat*** the returned the filepath to get the flag.  
+![alt text](images/image-12.png)  
+Flag: **picoCTF{f1nd_15_f457_ab443fd1}**
+
+
+## Static ain't always noise
+We run **strings** on the binary file and pipe the result through **grep** for they keyword **pico**. We do this and get the flag.  
+![alt text](images/image-13.png)  
+Flag: **picoCTF{d15a5m_t34s3r_f5aeda17}**  
+
+## fixme1.py
+If we try to run the program, we quickly get an idea of the location of the error and the type of error.  
+```
+~/CTFs$ python3 fixme1.py 
+  File "CTFs/fixme1.py", line 20
+    print('That is correct! Here\'s your flag: ' + flag)
+IndentationError: unexpected indent
+```
