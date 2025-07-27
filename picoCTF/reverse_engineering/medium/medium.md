@@ -71,7 +71,7 @@ def check_key(key, username_trial):
         return True
 ```
 This modified program will crash after the last 8 digits are printed, but it will get us the last 8 digits. We just need to enter the original few characters for the flag as the license.    
-![alt text](image.png)  
+![alt text](images/image.png)  
 Flag: **picoCTF{1n_7h3_|<3y_of_0d208392}**  
 
 
@@ -101,7 +101,7 @@ def win():
   print(str_flag)
 ```
 So if we enter **win** we should be given the hex string of the flsg.  
-![alt text](image-1.png)  
+![alt text](images/image-1.png)  
 Decoding it, we get the flag.  
 Flag: **picoCTF{4_d14m0nd_1n_7h3_r0ugh_ce4b5d5b}**  
 
@@ -382,9 +382,9 @@ else:
     print('passed')
 ```
 Here we can see, that as long as the entered string does not have the substring ***win***, we can pass the check and since **eval** treats the string as a normal python statement, we can just call another **eval** inside it to create the necessary string.  
-![alt text](image-2.png)  
+![alt text](images/image-2.png)  
 Passing it to the instance gets us a hex string which on decoding gives us the flag.  
-![alt text](image-3.png)  
+![alt text](images/image-3.png)  
 Flag: **picoCTF{f1l73r5_f41l_c0d3_r3f4c70r_m1gh7_5ucc33d_b924e8e5}**  
 
 
@@ -468,8 +468,8 @@ thermos@valkyrie:~/picoCTF$ python3 test.py
 "win AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 ```
 Now we just run the program and rewrite the value.
-![alt text](image-4.png)  
-Once we decode the hex string, we get the flag.
+![alt text](images/image-4.png)  
+Once we decode the hex string, we get the flag.  
 Flag: **picoCTF{7h15_15_wh47_w3_g37_w17h_u53r5_1n_ch4rg3_226dd285}**  
 
 
