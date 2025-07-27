@@ -473,3 +473,58 @@ Once we decode the hex string, we get the flag.
 Flag: **picoCTF{7h15_15_wh47_w3_g37_w17h_u53r5_1n_ch4rg3_226dd285}**  
 
 
+## Safe Opener
+Let's just go through the program.
+```
+import java.io.*;
+import java.util.*;  
+public class SafeOpener {
+    public static void main(String args[]) throws IOException {
+        BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+        Base64.Encoder encoder = Base64.getEncoder();
+        String encodedkey = "";
+        String key = "";
+        int i = 0;
+        boolean isOpen;
+        
+
+        while (i < 3) {
+            System.out.print("Enter password for the safe: ");
+            key = keyboard.readLine();
+
+            encodedkey = encoder.encodeToString(key.getBytes());
+            System.out.println(encodedkey);
+              
+            isOpen = openSafe(encodedkey);
+            if (!isOpen) {
+                System.out.println("You have  " + (2 - i) + " attempt(s) left");
+                i++;
+                continue;
+            }
+            break;
+        }
+    }
+    
+    public static boolean openSafe(String password) {
+        String encodedkey = "cGwzYXMzX2wzdF9tM18xbnQwX3RoM19zYWYz";
+        
+        if (password.equals(encodedkey)) {
+            System.out.println("Sesame open");
+            return true;
+        }
+        else {
+            System.out.println("Password is incorrect\n");
+            return false;
+        }
+    }
+}
+```
+The ***encodedkey*** looks like a **base64** string. We use **cyberchef** to decode it and we get the flag.  
+![alt text](images/image-5.png)  
+Flag: **picoCTF{pl3as3_l3t_m3_1nt0_th3_saf3}**
+
+
+## Safe Opener 2
+Since we can't directly view this file, we are gonna run **strings** and pipe it through **grep** to see if we can find anything related to the flag.  
+![alt text](images/image-6.png) 
+Flag: **picoCTF{SAf3_0p3n3rr_y0u_solv3d_it_5bfbd6f1}**
