@@ -1,12 +1,12 @@
 ## PW Crack 3
 We check the python file and find a list of passwords. We just test them one by one and find the given flag.  
-![alt text](image.png)  
+![alt text](images/image.png)  
 Flag:  **picoCTF{m45h_fl1ng1ng_cd6ed2eb}**  
 
 
 ## PW Crack 4
 We modify the program itself to loop over all the required possible passwords rather than ask for password from the user and run it to get the password.  
-![alt text](image-1.png)  
+![alt text](images/image-1.png)  
 Flag: **picoCTF{fl45h_5pr1ng1ng_cf341ff1}**  
 
 
@@ -61,6 +61,4 @@ Flag: **picoCTF{h45h_sl1ng1ng_fffcda23}**
 
 ## ASCII Numbers
 We just transfer the string into **cyberchef** and decode it to get the flag.  
-Flag: **ASCII Numbers**  
-
-
+Flag: **picoCTF{45c11_n0_qu35710n5_1ll_t311_y3_n0_l135_445d4180}**  
