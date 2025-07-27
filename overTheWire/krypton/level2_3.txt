@@ -1,0 +1,3 @@
+create a temp directory using mktemp and then just run the encrypt using a chosen plaintext attack
+
+The password is "CAESARISEASY"
