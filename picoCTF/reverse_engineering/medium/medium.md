@@ -526,5 +526,5 @@ Flag: **picoCTF{pl3as3_l3t_m3_1nt0_th3_saf3}**
 
 ## Safe Opener 2
 Since we can't directly view this file, we are gonna run **strings** and pipe it through **grep** to see if we can find anything related to the flag.  
-![alt text](images/image-6.png) 
+![alt text](images/image-6.png)  
 Flag: **picoCTF{SAf3_0p3n3rr_y0u_solv3d_it_5bfbd6f1}**
