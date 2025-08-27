@@ -88,4 +88,29 @@ It looks like we faced some issues, but we know that the program is trying to in
 * DUEDILIGENCE  
 
 The final password gives us a ***flag.txt*** file. This contains the flag.  
-![alt text](images/image-16.png)  
+![alt text](images/image-16.png)   
+
+
+## shark on wire 1
+We go through the **statistics** for the **Protocol Hierarchy Statistics**.  
+![alt text](images/image-17.png)  
+There are ***728 UDP packets*** containing **data**. Setting them as a filter and **follow** through the UDP conversations. Going through them one-by-one, we soon find the flag.  
+![alt text](images/image-18.png)  
+Flag: **picoCTF{StaT31355_636f6e6e}**  
+
+
+## shark on wire 2
+We open the packets and follow the **UDP stream** since the TCP stream doesn't contain anything important. We discover parts of what looks like to be the flag but nothing concrete, until we stumble upon this...  
+![alt text](images/image-19.png)  
+and  
+![alt text](images/image-20.png)  
+We soon notice that all these packets start from the IP **10.0.0.66** and they have the starting **port 5112** also **112 -> p**, going through the list of all the following ports...  
+```
+112 105 099 111 067 084 070 123 112 049 076 076 102 051 114 051 100 095 100 097 116 097 095 118 049 097 095 115 116 051 103 048 125
+```
+and doing a conversion from decimal to ascii  
+![alt text](images/image-21.png)  
+We get the flag.  
+Flag: **picoCTF{p1LLf3r3d_data_v1a_st3g0}**  
+**Note:** I wasn't able to solve this challenge, so if you managed to do this on your own then congrats!!!   
+

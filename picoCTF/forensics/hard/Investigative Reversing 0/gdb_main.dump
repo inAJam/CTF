@@ -1,0 +1,137 @@
+Dump of assembler code for function main:
+   0x0000000000001195 <+0>:	push   rbp
+   0x0000000000001196 <+1>:	mov    rbp,rsp
+   0x0000000000001199 <+4>:	sub    rsp,0x50
+   0x000000000000119d <+8>:	mov    rax,QWORD PTR fs:0x28
+   0x00000000000011a6 <+17>:	mov    QWORD PTR [rbp-0x8],rax
+   0x00000000000011aa <+21>:	xor    eax,eax
+   0x00000000000011ac <+23>:	lea    rsi,[rip+0xe55]        # 0x2008
+   0x00000000000011b3 <+30>:	lea    rdi,[rip+0xe50]        # 0x200a
+   0x00000000000011ba <+37>:	call   0x1080 <fopen@plt>     # opens flag.txt in read mode
+   0x00000000000011bf <+42>:	mov    QWORD PTR [rbp-0x40],rax
+   0x00000000000011c3 <+46>:	lea    rsi,[rip+0xe49]        # 0x2013
+   0x00000000000011ca <+53>:	lea    rdi,[rip+0xe44]        # 0x2015
+   0x00000000000011d1 <+60>:	call   0x1080 <fopen@plt>     # opens mystery.png in append mode
+   0x00000000000011d6 <+65>:	mov    QWORD PTR [rbp-0x38],rax
+   0x00000000000011da <+69>:	cmp    QWORD PTR [rbp-0x40],0x0
+   0x00000000000011df <+74>:	jne    0x11ed <main+88>
+   0x00000000000011e1 <+76>:	lea    rdi,[rip+0xe40]        # 0x2028
+   0x00000000000011e8 <+83>:	call   0x1030 <puts@plt>      # prints No flag found, please make sure this is run on the server
+   0x00000000000011ed <+88>:	cmp    QWORD PTR [rbp-0x38],0x0
+   0x00000000000011f2 <+93>:	jne    0x1200 <main+107>
+   0x00000000000011f4 <+95>:	lea    rdi,[rip+0xe6d]        # 0x2068
+   0x00000000000011fb <+102>:	call   0x1030 <puts@plt>      # prints mystery.png is missing, please run this on the server
+   0x0000000000001200 <+107>:	mov    rdx,QWORD PTR [rbp-0x40]
+   0x0000000000001204 <+111>:	lea    rax,[rbp-0x30]
+   0x0000000000001208 <+115>:	mov    rcx,rdx
+   0x000000000000120b <+118>:	mov    edx,0x1
+   0x0000000000001210 <+123>:	mov    esi,0x1a
+   0x0000000000001215 <+128>:	mov    rdi,rax
+   0x0000000000001218 <+131>:	call   0x1040 <fread@plt>     # reads the value in flag.txt
+   0x000000000000121d <+136>:	mov    DWORD PTR [rbp-0x44],eax
+   0x0000000000001220 <+139>:	cmp    DWORD PTR [rbp-0x44],0x0
+   0x0000000000001224 <+143>:	jg     0x1230 <main+155>
+   0x0000000000001226 <+145>:	mov    edi,0x0
+   0x000000000000122b <+150>:	call   0x1090 <exit@plt>
+   0x0000000000001230 <+155>:	lea    rdi,[rip+0xe67]        # 0x209e
+   0x0000000000001237 <+162>:	call   0x1030 <puts@plt>      # prints at insert
+   0x000000000000123c <+167>:	movzx  eax,BYTE PTR [rbp-0x30]
+   0x0000000000001240 <+171>:	mov    BYTE PTR [rbp-0x4d],al
+   0x0000000000001243 <+174>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001247 <+178>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x000000000000124b <+182>:	mov    rsi,rdx
+   0x000000000000124e <+185>:	mov    edi,eax
+   0x0000000000001250 <+187>:	call   0x1070 <fputc@plt>
+   0x0000000000001255 <+192>:	movzx  eax,BYTE PTR [rbp-0x2f]
+   0x0000000000001259 <+196>:	mov    BYTE PTR [rbp-0x4d],al
+   0x000000000000125c <+199>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001260 <+203>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x0000000000001264 <+207>:	mov    rsi,rdx
+   0x0000000000001267 <+210>:	mov    edi,eax
+   0x0000000000001269 <+212>:	call   0x1070 <fputc@plt>
+   0x000000000000126e <+217>:	movzx  eax,BYTE PTR [rbp-0x2e]
+   0x0000000000001272 <+221>:	mov    BYTE PTR [rbp-0x4d],al
+   0x0000000000001275 <+224>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001279 <+228>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x000000000000127d <+232>:	mov    rsi,rdx
+   0x0000000000001280 <+235>:	mov    edi,eax
+   0x0000000000001282 <+237>:	call   0x1070 <fputc@plt>
+   0x0000000000001287 <+242>:	movzx  eax,BYTE PTR [rbp-0x2d]
+   0x000000000000128b <+246>:	mov    BYTE PTR [rbp-0x4d],al
+   0x000000000000128e <+249>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001292 <+253>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x0000000000001296 <+257>:	mov    rsi,rdx
+   0x0000000000001299 <+260>:	mov    edi,eax
+   0x000000000000129b <+262>:	call   0x1070 <fputc@plt>
+   0x00000000000012a0 <+267>:	movzx  eax,BYTE PTR [rbp-0x2c]
+   0x00000000000012a4 <+271>:	mov    BYTE PTR [rbp-0x4d],al
+   0x00000000000012a7 <+274>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x00000000000012ab <+278>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x00000000000012af <+282>:	mov    rsi,rdx
+   0x00000000000012b2 <+285>:	mov    edi,eax
+   0x00000000000012b4 <+287>:	call   0x1070 <fputc@plt>
+   0x00000000000012b9 <+292>:	movzx  eax,BYTE PTR [rbp-0x2b]
+   0x00000000000012bd <+296>:	mov    BYTE PTR [rbp-0x4d],al
+   0x00000000000012c0 <+299>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x00000000000012c4 <+303>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x00000000000012c8 <+307>:	mov    rsi,rdx
+   0x00000000000012cb <+310>:	mov    edi,eax
+   0x00000000000012cd <+312>:	call   0x1070 <fputc@plt>
+   0x00000000000012d2 <+317>:	mov    DWORD PTR [rbp-0x4c],0x6
+   0x00000000000012d9 <+324>:	jmp    0x1308 <main+371>
+   0x00000000000012db <+326>:	mov    eax,DWORD PTR [rbp-0x4c]
+   0x00000000000012de <+329>:	cdqe   
+   0x00000000000012e0 <+331>:	movzx  eax,BYTE PTR [rbp+rax*1-0x30]
+   0x00000000000012e5 <+336>:	mov    BYTE PTR [rbp-0x4d],al
+   0x00000000000012e8 <+339>:	movzx  eax,BYTE PTR [rbp-0x4d]
+   0x00000000000012ec <+343>:	add    eax,0x5
+   0x00000000000012ef <+346>:	mov    BYTE PTR [rbp-0x4d],al
+   0x00000000000012f2 <+349>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x00000000000012f6 <+353>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x00000000000012fa <+357>:	mov    rsi,rdx
+   0x00000000000012fd <+360>:	mov    edi,eax
+   0x00000000000012ff <+362>:	call   0x1070 <fputc@plt>
+   0x0000000000001304 <+367>:	add    DWORD PTR [rbp-0x4c],0x1
+   0x0000000000001308 <+371>:	cmp    DWORD PTR [rbp-0x4c],0xe
+   0x000000000000130c <+375>:	jle    0x12db <main+326>
+   0x000000000000130e <+377>:	movzx  eax,BYTE PTR [rbp-0x21]
+   0x0000000000001312 <+381>:	mov    BYTE PTR [rbp-0x4d],al
+   0x0000000000001315 <+384>:	movzx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001319 <+388>:	sub    eax,0x3
+   0x000000000000131c <+391>:	mov    BYTE PTR [rbp-0x4d],al
+   0x000000000000131f <+394>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x0000000000001323 <+398>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x0000000000001327 <+402>:	mov    rsi,rdx
+   0x000000000000132a <+405>:	mov    edi,eax
+   0x000000000000132c <+407>:	call   0x1070 <fputc@plt>
+   0x0000000000001331 <+412>:	mov    DWORD PTR [rbp-0x48],0x10
+   0x0000000000001338 <+419>:	jmp    0x135d <main+456>
+   0x000000000000133a <+421>:	mov    eax,DWORD PTR [rbp-0x48]
+   0x000000000000133d <+424>:	cdqe   
+   0x000000000000133f <+426>:	movzx  eax,BYTE PTR [rbp+rax*1-0x30]
+   0x0000000000001344 <+431>:	mov    BYTE PTR [rbp-0x4d],al
+   0x0000000000001347 <+434>:	movsx  eax,BYTE PTR [rbp-0x4d]
+   0x000000000000134b <+438>:	mov    rdx,QWORD PTR [rbp-0x38]
+   0x000000000000134f <+442>:	mov    rsi,rdx
+   0x0000000000001352 <+445>:	mov    edi,eax
+   0x0000000000001354 <+447>:	call   0x1070 <fputc@plt>
+   0x0000000000001359 <+452>:	add    DWORD PTR [rbp-0x48],0x1
+   0x000000000000135d <+456>:	cmp    DWORD PTR [rbp-0x48],0x19
+   0x0000000000001361 <+460>:	jle    0x133a <main+421>
+   0x0000000000001363 <+462>:	mov    rax,QWORD PTR [rbp-0x38]
+   0x0000000000001367 <+466>:	mov    rdi,rax
+   0x000000000000136a <+469>:	call   0x1050 <fclose@plt>
+   0x000000000000136f <+474>:	mov    rax,QWORD PTR [rbp-0x40]
+   0x0000000000001373 <+478>:	mov    rdi,rax
+   0x0000000000001376 <+481>:	call   0x1050 <fclose@plt>
+   0x000000000000137b <+486>:	nop
+   0x000000000000137c <+487>:	mov    rax,QWORD PTR [rbp-0x8]
+   0x0000000000001380 <+491>:	xor    rax,QWORD PTR fs:0x28
+   0x0000000000001389 <+500>:	je     0x1390 <main+507>
+   0x000000000000138b <+502>:	call   0x1060 <__stack_chk_fail@plt>
+   0x0000000000001390 <+507>:	leave  
+   0x0000000000001391 <+508>:	ret    
+End of assembler dump.
+Warning: 'set logging off', an alias for the command 'set logging enabled', is deprecated.
+Use 'set logging enabled off'.
+
