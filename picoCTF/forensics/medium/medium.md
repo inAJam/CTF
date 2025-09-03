@@ -114,3 +114,12 @@ We get the flag.
 Flag: **picoCTF{p1LLf3r3d_data_v1a_st3g0}**  
 **Note:** I wasn't able to solve this challenge, so if you managed to do this on your own then congrats!!!   
 
+
+## m00nwalk
+Listening to the audio doesn't give us any hints so we tried to first let it run through a morse code detector. Since that did not result in any proper output, we looked at the first hint:  
+`How did pictures from the moon landing get sent back to Earth?`  
+The answer to that is **Slow-scan television (SSTV)**. It is a picture transmission method, used mainly by amateur radio operators, to transmit and receive static pictures via radio in monochrome or color.  
+A literal term for SSTV is narrowband television and it usually only takes up to a maximum of 3 kHz of bandwidth.  
+We feed the image to any online **SSTV** decoder and get the image.  
+![alt text](images/image-22.png)  
+Flag: **picoCTF{beep_boop_im_in_space}**  
